@@ -1,0 +1,42 @@
+name: "Runner"
+on:
+  push:
+    paths:
+      - '.github/workflows/run.yml'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - 'start.py'
+      - 'ditto/**'
+      - 'config**yml'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql db: test
+          postgresql password: password
+      - uses: actions/setup-python@v2
+      - uses: snok/install-poetry@v1.1.8
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      - uses: actions/cache@v2.1.5
+        id: cached-dependecies
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}-no-dev
+      - name: Validate pyproject.toml
+        run: poetry check
+      - name: Install dependencies
+        if: steps.cached-dependecies.outputs.cache-hit != 'true'
+        run: poetry install --no-dev
+      - name: Run bot
+        run: poetry run start --ci
+        env:
+          BOT_TOKEN: ${{secrets.DISCORD_BOT_TOKEN}}
+          POSTGRES_DSN: postgres://postgres:password@localhost/test
+          LOG_LEVEL: INFO
+          LOG_WEBHOOK_URI: ${{secrets.LOG_WEBHOOK_URI}}

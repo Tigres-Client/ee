@@ -1,0 +1,14 @@
+# An example config override file.
+# Keys explicitly defined here are overriden
+
+!Config
+  OVERRIDE: !Config
+    EXAMPLE: yes
+
+  EMOJI: !Config
+    NOT_FOUND: !Emoji 843749427071287318
+    GUILDS: [
+      !Guild 752862384355410013
+    ]
+
+# CONFIG.OVERRIDE.EXAMPLE will be set to Literal[True]

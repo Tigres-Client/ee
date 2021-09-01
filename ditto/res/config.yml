@@ -1,0 +1,53 @@
+# Base Ditto configuration file
+#   You can override these options in custom override files
+
+!Config
+
+  APP_NAME: 'Ditto'
+  
+  SOURCE: !Config
+    DITTO: 'bijij/ditto'
+    CUSTOM: 'bijij/ditto'
+
+  BOT: !Config
+    ALLOW_MENTIONS_AS_PREFIX: yes
+    PREFIX: !ENV BOT_PREFIX
+    TOKEN: !ENV BOT_TOKEN
+    IGNORE_BOTS: yes
+    # INTENTS:  # Map a dictionary of intents
+
+  EMOJI: !Config
+    NOT_FOUND: ~
+    LEAVE_FREE: 5
+    GUILDS: []
+
+  LOGGING: !Config
+    LOG_LEVEL: !ENV LOG_LEVEL
+    GLOBAL_LOG_LEVEL: !ENV LOG_LEVEL
+    WEBHOOK_URI: !ENV LOG_WEBHOOK_URI
+    LOG_TO_FILE: no
+  
+  DATABASE: !Config
+    # Database Settings: Set either a DSN or Hostname, Username, Password and Database
+    DISABLED: no
+    APPLICATION_NAME: 'Ditto'
+    DSN: !ENV POSTGRES_DSN
+    HOSTNAME: ~
+    USERNAME: ~
+    PASSWORD: ~
+    DATABASE: ~
+
+  MISC: !Config
+    DUCKLING_SERVER: !ENV DUCKLING_SERVER
+
+  EXTENSIONS:
+    # 3rd Party Extensions
+    'jishaku': ~
+
+    # Core Extensions
+    'ditto.cogs.core.admin': ~
+    'ditto.cogs.core.info': ~
+
+    # Logging Extensions
+    'ditto.cogs.logging.stats': ~
+    'ditto.cogs.logging.timezone': ~
