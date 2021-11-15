@@ -174,7 +174,7 @@ resolved_reference = "fbb8803779373357e274e1540b368365fd9d8074"
 
 [[package]]
 name = "discord.py"
-version = "2.0.0a3453+g58ca9e99"
+version = "2.0.0a3575+g45d498c1"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -193,11 +193,11 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 type = "git"
 url = "https://github.com/rapptz/discord.py"
 reference = "master"
-resolved_reference = "58ca9e99325ac2678a51cd63afd7ae917f14bc8d"
+resolved_reference = "45d498c1b76deaf3b394d17ccf56112fa691d160"
 
 [[package]]
 name = "donphan"
-version = "4.5.0"
+version = "4.9.0"
 description = "Asynchronous Database ORM for Postgres"
 category = "main"
 optional = false
@@ -252,7 +252,7 @@ python-versions = "*"
 
 [[package]]
 name = "jishaku"
-version = "2.2.0a343+gd1d6485.master"
+version = "2.3.2a356+ga6cdb41.master"
 description = "A discord.py extension including useful tools for bot development and debugging."
 category = "main"
 optional = false
@@ -262,7 +262,6 @@ develop = false
 [package.dependencies]
 braceexpand = ">=0.1.7"
 click = ">=8.0.1"
-"discord.py" = ">=1.7.2"
 import-expression = ">=1.0.0,<2.0.0"
 
 [package.extras]
@@ -270,13 +269,13 @@ docs = ["sphinx (>=3.5.4)", "sphinxcontrib-asyncio"]
 procinfo = ["psutil"]
 publish = ["jinja2"]
 test = ["click", "coverage", "flake8", "isort", "pylint", "pytest", "pytest-cov", "pytest-mock"]
-voice = ["discord.py[voice] (>=1.7.2)", "youtube-dl"]
+voice = ["youtube-dl"]
 
 [package.source]
 type = "git"
 url = "https://github.com/Gorialis/jishaku"
 reference = "master"
-resolved_reference = "d1d64857aef6926307cd4a883e107586419ce1e2"
+resolved_reference = "a6cdb41aed32c7dbd4273d63aa57996cc1f90fa6"
 
 [[package]]
 name = "multidict"
@@ -579,8 +578,8 @@ discord-ext-alternatives = []
 discord-ext-menus = []
 "discord.py" = []
 donphan = [
-    {file = "Donphan-4.5.0-py3-none-any.whl", hash = "sha256:84b378e5024c4ea6912de9e5935f9903fcc537c5c5e52f8ef4bc482468b339ba"},
-    {file = "Donphan-4.5.0.tar.gz", hash = "sha256:806a9d7127f846b340110ff6a38a0fc2c4619a7a2c7aec873c5622ac038f197d"},
+    {file = "Donphan-4.9.0-py3-none-any.whl", hash = "sha256:354960abcd3147f90617ea122477f3a61ab2b9af5a044e5797fb377ff860224a"},
+    {file = "Donphan-4.9.0.tar.gz", hash = "sha256:f6268eacde70d73702820c9e43f29736941194d848ba1f02cd00a339970f8f12"},
 ]
 humanize = [
     {file = "humanize-3.11.0-py3-none-any.whl", hash = "sha256:06c79af7873473c47477840010ccb9b11b0d431f37f4a81b71edd653211936be"},
